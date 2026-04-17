@@ -1,0 +1,97 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" font-family="monospace, sans-serif">
+  <rect width="900" height="600" fill="#0a0a12"/>
+  <text x="450" y="38" text-anchor="middle" fill="#e8ff47" font-size="18" font-weight="bold" font-family="sans-serif">ER Diagram — Hostel Room Allocation &amp; Complaint System</text>
+
+  <!-- STUDENT entity -->
+  <rect x="40" y="70" width="180" height="220" rx="10" fill="#12121e" stroke="#7c6af7" stroke-width="2"/>
+  <rect x="40" y="70" width="180" height="36" rx="10" fill="#7c6af7"/>
+  <text x="130" y="94" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">STUDENT</text>
+  <text x="56" y="124" fill="#aaa" font-size="12">🔑 student_id</text>
+  <text x="56" y="146" fill="#ccc" font-size="12">name</text>
+  <text x="56" y="168" fill="#ccc" font-size="12">email</text>
+  <text x="56" y="190" fill="#ccc" font-size="12">year</text>
+  <text x="56" y="212" fill="#ccc" font-size="12">branch</text>
+  <text x="56" y="234" fill="#ccc" font-size="12">phone</text>
+  <text x="56" y="256" fill="#ccc" font-size="12">password_hash</text>
+  <text x="56" y="278" fill="#ccc" font-size="12">block_preference</text>
+
+  <!-- ROOM entity -->
+  <rect x="360" y="70" width="180" height="200" rx="10" fill="#12121e" stroke="#e8ff47" stroke-width="2"/>
+  <rect x="360" y="70" width="180" height="36" rx="10" fill="#e8ff47"/>
+  <text x="450" y="94" text-anchor="middle" fill="#000" font-size="14" font-weight="bold">ROOM</text>
+  <text x="376" y="124" fill="#aaa" font-size="12">🔑 room_no</text>
+  <text x="376" y="146" fill="#ccc" font-size="12">block</text>
+  <text x="376" y="168" fill="#ccc" font-size="12">floor</text>
+  <text x="376" y="190" fill="#ccc" font-size="12">type (single/double/triple)</text>
+  <text x="376" y="212" fill="#ccc" font-size="12">capacity</text>
+  <text x="376" y="234" fill="#ccc" font-size="12">status</text>
+  <text x="376" y="256" fill="#ccc" font-size="12">amenities</text>
+
+  <!-- ALLOCATION entity -->
+  <rect x="680" y="70" width="180" height="180" rx="10" fill="#12121e" stroke="#4ade80" stroke-width="2"/>
+  <rect x="680" y="70" width="180" height="36" rx="10" fill="#4ade80"/>
+  <text x="770" y="94" text-anchor="middle" fill="#000" font-size="14" font-weight="bold">ALLOCATION</text>
+  <text x="696" y="124" fill="#aaa" font-size="12">🔑 alloc_id</text>
+  <text x="696" y="146" fill="#ccc" font-size="12">🔗 student_id (FK)</text>
+  <text x="696" y="168" fill="#ccc" font-size="12">🔗 room_no (FK)</text>
+  <text x="696" y="190" fill="#ccc" font-size="12">alloc_date</text>
+  <text x="696" y="212" fill="#ccc" font-size="12">semester</text>
+  <text x="696" y="234" fill="#ccc" font-size="12">status</text>
+
+  <!-- COMPLAINT entity -->
+  <rect x="40" y="380" width="200" height="200" rx="10" fill="#12121e" stroke="#f87171" stroke-width="2"/>
+  <rect x="40" y="380" width="200" height="36" rx="10" fill="#f87171"/>
+  <text x="140" y="404" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">COMPLAINT</text>
+  <text x="56" y="434" fill="#aaa" font-size="12">🔑 complaint_id</text>
+  <text x="56" y="456" fill="#ccc" font-size="12">🔗 student_id (FK)</text>
+  <text x="56" y="478" fill="#ccc" font-size="12">🔗 room_no (FK)</text>
+  <text x="56" y="500" fill="#ccc" font-size="12">category</text>
+  <text x="56" y="522" fill="#ccc" font-size="12">priority</text>
+  <text x="56" y="544" fill="#ccc" font-size="12">status</text>
+  <text x="56" y="566" fill="#ccc" font-size="12">filed_at / resolved_at</text>
+
+  <!-- WARDEN entity -->
+  <rect x="360" y="380" width="180" height="160" rx="10" fill="#12121e" stroke="#fbbf24" stroke-width="2"/>
+  <rect x="360" y="380" width="180" height="36" rx="10" fill="#fbbf24"/>
+  <text x="450" y="404" text-anchor="middle" fill="#000" font-size="14" font-weight="bold">WARDEN</text>
+  <text x="376" y="434" fill="#aaa" font-size="12">🔑 warden_id</text>
+  <text x="376" y="456" fill="#ccc" font-size="12">name</text>
+  <text x="376" y="478" fill="#ccc" font-size="12">block_assigned</text>
+  <text x="376" y="500" fill="#ccc" font-size="12">email / phone</text>
+  <text x="376" y="522" fill="#ccc" font-size="12">password_hash</text>
+
+  <!-- MAINTENANCE_STAFF entity -->
+  <rect x="660" y="380" width="200" height="160" rx="10" fill="#12121e" stroke="#60a5fa" stroke-width="2"/>
+  <rect x="660" y="380" width="200" height="36" rx="10" fill="#60a5fa"/>
+  <text x="760" y="404" text-anchor="middle" fill="#000" font-size="14" font-weight="bold">MAINT. STAFF</text>
+  <text x="676" y="434" fill="#aaa" font-size="12">🔑 staff_id</text>
+  <text x="676" y="456" fill="#ccc" font-size="12">name</text>
+  <text x="676" y="478" fill="#ccc" font-size="12">category_expertise</text>
+  <text x="676" y="500" fill="#ccc" font-size="12">email / phone</text>
+  <text x="676" y="522" fill="#ccc" font-size="12">assigned_complaints</text>
+
+  <!-- Relationships -->
+  <!-- Student — Allocation -->
+  <line x1="220" y1="160" x2="680" y2="160" stroke="#7c6af7" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="450" y="150" text-anchor="middle" fill="#7c6af7" font-size="11">requests →</text>
+  <!-- Room — Allocation -->
+  <line x1="540" y1="160" x2="680" y2="160" stroke="#e8ff47" stroke-width="1.5"/>
+  <!-- Student — Complaint -->
+  <line x1="130" y1="290" x2="130" y2="380" stroke="#f87171" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="148" y="340" fill="#f87171" font-size="11">files →</text>
+  <!-- Room — Complaint -->
+  <line x1="360" y1="270" x2="200" y2="460" stroke="#e8ff47" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <!-- Complaint — Staff -->
+  <line x1="240" y1="480" x2="660" y2="480" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="450" y="472" text-anchor="middle" fill="#60a5fa" font-size="11">assigned to →</text>
+  <!-- Warden — Complaint -->
+  <line x1="450" y1="380" x2="200" y2="450" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- Legend -->
+  <rect x="40" y="556" width="10" height="10" fill="#aaa"/>
+  <text x="58" y="566" fill="#aaa" font-size="10">🔑 Primary Key</text>
+  <rect x="160" y="556" width="10" height="10" fill="#7c6af7"/>
+  <text x="178" y="566" fill="#aaa" font-size="10">🔗 Foreign Key</text>
+  <line x1="290" y1="561" x2="320" y2="561" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="328" y="566" fill="#aaa" font-size="10">Relationship</text>
+</svg>

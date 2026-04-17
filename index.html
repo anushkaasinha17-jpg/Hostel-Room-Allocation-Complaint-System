@@ -1,580 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HostelHub — Room Allocation & Complaint System</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HOSTELHUB — Room Allocation & Complaint System</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Special+Elite&family=Barlow+Condensed:wght@400;600;700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-brand">
-      <span class="brand-icon">⬡</span>
-      <span class="brand-text">HostelHub</span>
+<div class="noise"></div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>📢 ROOM APPLICATIONS OPEN — SEM 2 · 2025</span>
+    <span>⚡ 42 ROOMS AVAILABLE IN BLOCK A &amp; C</span>
+    <span>🔧 MAINTENANCE STAFF ON DUTY: 9AM–6PM</span>
+    <span>📋 COMPLAINT #47 — ELECTRICAL — IN PROGRESS</span>
+    <span>🏠 HOSTEL CAPACITY: 87% OCCUPIED</span>
+    <span>📢 ROOM APPLICATIONS OPEN — SEM 2 · 2025</span>
+    <span>⚡ 42 ROOMS AVAILABLE IN BLOCK A &amp; C</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-meta">VOL. IV · NO. 21 · EST. 2021</div>
+    <div class="masthead-center">
+      <div class="mast-rule"></div>
+      <h1 class="mast-logo">HOSTEL<em>HUB</em></h1>
+      <p class="mast-tagline">ROOM ALLOCATION &amp; COMPLAINT MANAGEMENT SYSTEM</p>
+      <div class="mast-rule"></div>
     </div>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#rooms">Rooms</a></li>
-      <li><a href="#complaints">Complaints</a></li>
-      <li><a href="#dashboard">Dashboard</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-    <button class="nav-cta">Login →</button>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="masthead-meta">SPM PROJECT · 2025</div>
+  </div>
+  <nav class="mast-nav">
+    <a href="#home" class="nlink active">HOME</a>
+    <span class="ndot">◆</span>
+    <a href="#rooms" class="nlink">ROOMS</a>
+    <span class="ndot">◆</span>
+    <a href="#complaints" class="nlink">COMPLAINTS</a>
+    <span class="ndot">◆</span>
+    <a href="#dashboard" class="nlink">DASHBOARD</a>
+    <span class="ndot">◆</span>
+    <a href="#about" class="nlink">ABOUT</a>
+    <button class="login-btn" onclick="alert('Connect backend to enable login.')">[ LOGIN ]</button>
   </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-blob blob1"></div>
-    <div class="hero-blob blob2"></div>
-    <div class="hero-content">
-      <div class="hero-badge">🎓 Software Project Management — SPM Project</div>
-      <h1 class="hero-title">
-        Smarter Hostel<br/>
-        <span class="accent">Management,</span><br/>
-        Zero Hassle.
-      </h1>
-      <p class="hero-sub">Automate room allocation, track maintenance complaints, and keep students & wardens in sync — all from one elegant dashboard.</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="showSection('rooms')">Allocate Room</button>
-        <button class="btn-secondary" onclick="showSection('complaints')">File Complaint</button>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+
+    <div class="hero-main">
+      <div class="section-tag">BREAKING · HOSTEL MANAGEMENT</div>
+      <h2 class="headline-xl">ROOM ALLOCATION<br/><em>GOES DIGITAL</em></h2>
+      <div class="thin-rule"></div>
+      <p class="hero-body">HostelHub brings automated room assignment and real-time maintenance complaint tracking to your college hostel — replacing paper registers with a fast, transparent, role-based system. Students apply, wardens approve, staff resolve.</p>
+      <div class="cta-row">
+        <button class="cta-btn solid" onclick="document.getElementById('rooms').scrollIntoView({behavior:'smooth'})">APPLY FOR ROOM →</button>
+        <button class="cta-btn outline" onclick="document.getElementById('complaints').scrollIntoView({behavior:'smooth'})">FILE COMPLAINT →</button>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">320</span><span class="stat-label">Rooms</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-num">1.2k</span><span class="stat-label">Students</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Resolution Rate</span></div>
-      </div>
+      <div class="byline">By the HostelHub Team &nbsp;|&nbsp; Software Project Management, 2025</div>
     </div>
-    <div class="hero-visual">
-      <div class="card-float card1">
-        <div class="cf-icon">🛏️</div>
-        <div class="cf-info">
-          <strong>Room 204-A</strong>
-          <span class="badge-green">Available</span>
+
+    <div class="hero-side">
+      <div class="side-infobox">
+        <div class="infobox-label">◉ LIVE STATISTICS</div>
+        <div class="stats-quad">
+          <div class="sq"><span class="sq-num">320</span><span class="sq-lbl">TOTAL ROOMS</span></div>
+          <div class="sq sq-dark"><span class="sq-num">278</span><span class="sq-lbl">OCCUPIED</span></div>
+          <div class="sq sq-accent"><span class="sq-num">42</span><span class="sq-lbl">AVAILABLE</span></div>
+          <div class="sq sq-red"><span class="sq-num">17</span><span class="sq-lbl">OPEN TICKETS</span></div>
         </div>
       </div>
-      <div class="card-float card2">
-        <div class="cf-icon">🔧</div>
-        <div class="cf-info">
-          <strong>Plumbing Issue</strong>
-          <span class="badge-yellow">In Progress</span>
+      <div class="side-mapbox">
+        <div class="mapbox-label">BLOCK A — FLOOR 2 · LIVE MAP</div>
+        <div class="room-grid">
+          <div class="rr occ" title="Occupied">201</div>
+          <div class="rr occ" title="Occupied">202</div>
+          <div class="rr avail" title="Available">203</div>
+          <div class="rr avail" title="Available">204</div>
+          <div class="rr occ" title="Occupied">205</div>
+          <div class="rr maint" title="Maintenance">206</div>
+          <div class="rr avail" title="Available">207</div>
+          <div class="rr occ" title="Occupied">208</div>
+          <div class="rr occ" title="Occupied">209</div>
+          <div class="rr avail" title="Available">210</div>
+          <div class="rr avail" title="Available">211</div>
+          <div class="rr occ" title="Occupied">212</div>
         </div>
-      </div>
-      <div class="card-float card3">
-        <div class="cf-icon">✅</div>
-        <div class="cf-info">
-          <strong>Room 108-B Allocated</strong>
-          <span class="badge-blue">Done</span>
-        </div>
-      </div>
-      <div class="room-grid-visual">
-        <div class="rg-label">Block A — Floor 2</div>
-        <div class="rg-rooms">
-          <div class="rg-room occupied">201</div>
-          <div class="rg-room occupied">202</div>
-          <div class="rg-room available">203</div>
-          <div class="rg-room available">204</div>
-          <div class="rg-room occupied">205</div>
-          <div class="rg-room maintenance">206</div>
-          <div class="rg-room available">207</div>
-          <div class="rg-room occupied">208</div>
-          <div class="rg-room occupied">209</div>
-          <div class="rg-room available">210</div>
-          <div class="rg-room available">211</div>
-          <div class="rg-room occupied">212</div>
-        </div>
-        <div class="rg-legend">
-          <span><i class="dot occupied"></i>Occupied</span>
-          <span><i class="dot available"></i>Available</span>
-          <span><i class="dot maintenance"></i>Maintenance</span>
+        <div class="map-legend">
+          <span class="ml occ-ml">■ OCCUPIED</span>
+          <span class="ml avail-ml">■ AVAILABLE</span>
+          <span class="ml maint-ml">■ MAINT.</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- FEATURES -->
-  <section class="features" id="about">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Two Systems. One Platform.</h2>
-    <div class="features-grid">
-      <div class="feat-card feat-big">
-        <div class="feat-num">01</div>
-        <div class="feat-icon">🏠</div>
-        <h3>Room Allocation</h3>
-        <p>Automated assignment of hostel rooms based on student preferences, year, branch, and availability. Real-time room status tracking with admin override controls.</p>
-        <ul class="feat-list">
-          <li>➔ Preference-based allocation</li>
-          <li>➔ Waitlist management</li>
-          <li>➔ Roommate pairing</li>
-          <li>➔ Semester-wise renewal</li>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="about">
+  <div class="wrap">
+    <div class="sec-bar">
+      <span class="sec-label">FEATURES &amp; MODULES</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="feat-cols">
+
+      <div class="fc">
+        <div class="fc-num">01</div>
+        <div class="fc-ico">🏠</div>
+        <h3 class="fc-head">ROOM<br/>ALLOCATION</h3>
+        <div class="fc-rule"></div>
+        <p class="fc-body">Automated room assignment based on year, branch, and preferences. Students submit and receive confirmation within minutes.</p>
+        <ul class="fc-list">
+          <li>Preference-based matching</li>
+          <li>Waitlist system</li>
+          <li>Roommate pairing</li>
+          <li>Semester renewal</li>
         </ul>
       </div>
-      <div class="feat-card feat-big">
-        <div class="feat-num">02</div>
-        <div class="feat-icon">🔧</div>
-        <h3>Complaint Tracking</h3>
-        <p>Students raise maintenance requests directly from their dashboard. Wardens and staff receive real-time alerts and can update resolution status instantly.</p>
-        <ul class="feat-list">
-          <li>➔ Categorized complaints</li>
-          <li>➔ Priority escalation</li>
-          <li>➔ Photo uploads</li>
-          <li>➔ Resolution timeline</li>
+
+      <div class="fc fc-hi">
+        <div class="fc-num">02</div>
+        <div class="fc-ico">🔧</div>
+        <h3 class="fc-head">COMPLAINT<br/>TRACKING</h3>
+        <div class="fc-rule"></div>
+        <p class="fc-body">File requests with category, priority and description. Track resolution from filing to completion with a live timeline.</p>
+        <ul class="fc-list">
+          <li>6 complaint categories</li>
+          <li>Priority escalation</li>
+          <li>Photo uploads</li>
+          <li>Resolution SLA alerts</li>
         </ul>
       </div>
-      <div class="feat-card feat-sm">
-        <div class="feat-icon">📊</div>
-        <h3>Live Dashboard</h3>
-        <p>Admin & warden dashboards with real-time occupancy, complaint metrics, and room status.</p>
+
+      <div class="fc">
+        <div class="fc-num">03</div>
+        <div class="fc-ico">📊</div>
+        <h3 class="fc-head">ADMIN<br/>DASHBOARD</h3>
+        <div class="fc-rule"></div>
+        <p class="fc-body">Wardens and admins get a bird's-eye view with occupancy charts, complaint stats, activity logs.</p>
+        <ul class="fc-list">
+          <li>Occupancy analytics</li>
+          <li>Category breakdown</li>
+          <li>Activity feed</li>
+          <li>CSV exports</li>
+        </ul>
       </div>
-      <div class="feat-card feat-sm">
-        <div class="feat-icon">🔔</div>
-        <h3>Notifications</h3>
-        <p>Email & SMS alerts for room assignments, complaint updates, and warden announcements.</p>
+
+      <div class="fc">
+        <div class="fc-num">04</div>
+        <div class="fc-ico">🔐</div>
+        <h3 class="fc-head">ROLE-BASED<br/>ACCESS</h3>
+        <div class="fc-rule"></div>
+        <p class="fc-body">Separate portals for Students, Wardens, Maintenance Staff, and Administrators with role-specific views.</p>
+        <ul class="fc-list">
+          <li>4 role types</li>
+          <li>Secure login</li>
+          <li>Audit logs</li>
+          <li>Email notifications</li>
+        </ul>
       </div>
-      <div class="feat-card feat-sm">
-        <div class="feat-icon">🔐</div>
-        <h3>Role-Based Access</h3>
-        <p>Separate portals for Students, Wardens, Maintenance Staff, and Administrators.</p>
-      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ROOM ALLOCATION SECTION -->
-  <section class="room-section" id="rooms">
-    <div class="section-label">Room Management</div>
-    <h2 class="section-title">Allocate a Room</h2>
-    <div class="room-wrapper">
-      <!-- Form -->
-      <div class="alloc-form-box">
-        <h3>Room Allocation Form</h3>
-        <div class="form-group">
-          <label>Student ID</label>
-          <input type="text" placeholder="e.g. STU2024001" id="studentId"/>
-        </div>
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="Enter full name" id="studentName"/>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Year</label>
-            <select id="year">
-              <option>1st Year</option>
-              <option>2nd Year</option>
-              <option>3rd Year</option>
-              <option>4th Year</option>
-            </select>
+<!-- ROOMS -->
+<section class="rooms-section" id="rooms">
+  <div class="wrap">
+    <div class="sec-bar">
+      <span class="sec-label">ROOM ALLOCATION DESK</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="two-col">
+
+      <div class="panel">
+        <div class="panel-hdr">📝 APPLICATION FORM — ROOM ASSIGNMENT</div>
+        <div class="panel-bd">
+          <div class="row2">
+            <div class="fg">
+              <label class="fl">STUDENT ID</label>
+              <input class="fi" type="text" id="sId" placeholder="STU2024001"/>
+            </div>
+            <div class="fg">
+              <label class="fl">FULL NAME</label>
+              <input class="fi" type="text" id="sName" placeholder="Your full name"/>
+            </div>
           </div>
-          <div class="form-group">
-            <label>Block</label>
-            <select id="block">
-              <option>Block A</option>
-              <option>Block B</option>
-              <option>Block C</option>
-            </select>
+          <div class="row2">
+            <div class="fg">
+              <label class="fl">YEAR</label>
+              <select class="fi" id="sYear">
+                <option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label class="fl">PREFERRED BLOCK</label>
+              <select class="fi" id="sBlock">
+                <option>Block A</option><option>Block B</option><option>Block C</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label>Room Type</label>
-          <div class="radio-group">
-            <label class="radio-opt"><input type="radio" name="roomtype" value="single" checked/> Single</label>
-            <label class="radio-opt"><input type="radio" name="roomtype" value="double"/> Double</label>
-            <label class="radio-opt"><input type="radio" name="roomtype" value="triple"/> Triple</label>
+          <div class="fg">
+            <label class="fl">ROOM TYPE</label>
+            <div class="rr-group">
+              <label class="rc"><input type="radio" name="rtype" value="Single" checked/><span>SINGLE</span></label>
+              <label class="rc"><input type="radio" name="rtype" value="Double"/><span>DOUBLE</span></label>
+              <label class="rc"><input type="radio" name="rtype" value="Triple"/><span>TRIPLE</span></label>
+            </div>
           </div>
+          <button class="submit-btn" onclick="allocRoom()">SUBMIT APPLICATION</button>
+          <div id="allocMsg" class="res-msg"></div>
         </div>
-        <button class="btn-primary full-btn" onclick="allocateRoom()">Allocate Room</button>
-        <div class="alloc-result" id="allocResult"></div>
       </div>
 
-      <!-- Room Status Table -->
-      <div class="room-table-box">
-        <h3>Room Status Overview</h3>
-        <div class="filter-tabs">
-          <button class="tab active" onclick="filterRooms('all', this)">All</button>
-          <button class="tab" onclick="filterRooms('available', this)">Available</button>
-          <button class="tab" onclick="filterRooms('occupied', this)">Occupied</button>
-          <button class="tab" onclick="filterRooms('maintenance', this)">Maintenance</button>
+      <div class="panel">
+        <div class="panel-hdr">🗂️ CURRENT ROOM REGISTRY</div>
+        <div class="filter-bar">
+          <button class="fb active" onclick="fRoom('all',this)">ALL</button>
+          <button class="fb" onclick="fRoom('avail',this)">AVAILABLE</button>
+          <button class="fb" onclick="fRoom('occ',this)">OCCUPIED</button>
+          <button class="fb" onclick="fRoom('maint',this)">MAINT.</button>
         </div>
-        <div class="room-table-scroll">
-          <table class="room-table">
-            <thead>
-              <tr><th>Room No.</th><th>Block</th><th>Type</th><th>Occupant</th><th>Status</th></tr>
-            </thead>
-            <tbody id="roomTableBody">
-              <tr data-status="occupied"><td>101</td><td>A</td><td>Double</td><td>Riya Sharma</td><td><span class="badge-red">Occupied</span></td></tr>
-              <tr data-status="available"><td>102</td><td>A</td><td>Single</td><td>—</td><td><span class="badge-green">Available</span></td></tr>
-              <tr data-status="maintenance"><td>103</td><td>A</td><td>Triple</td><td>—</td><td><span class="badge-yellow">Maintenance</span></td></tr>
-              <tr data-status="occupied"><td>201</td><td>B</td><td>Double</td><td>Ankit Verma</td><td><span class="badge-red">Occupied</span></td></tr>
-              <tr data-status="available"><td>202</td><td>B</td><td>Single</td><td>—</td><td><span class="badge-green">Available</span></td></tr>
-              <tr data-status="available"><td>203</td><td>C</td><td>Triple</td><td>—</td><td><span class="badge-green">Available</span></td></tr>
-              <tr data-status="occupied"><td>301</td><td>C</td><td>Double</td><td>Priya Nair</td><td><span class="badge-red">Occupied</span></td></tr>
-              <tr data-status="maintenance"><td>304</td><td>C</td><td>Single</td><td>—</td><td><span class="badge-yellow">Maintenance</span></td></tr>
+        <div class="tbl-scroll">
+          <table class="reg-tbl">
+            <thead><tr><th>NO.</th><th>BLOCK</th><th>TYPE</th><th>OCCUPANT</th><th>STATUS</th></tr></thead>
+            <tbody id="rtb">
+              <tr data-s="occ"><td>101</td><td>A</td><td>Double</td><td>Riya Sharma</td><td><span class="t occ-t">OCCUPIED</span></td></tr>
+              <tr data-s="avail"><td>102</td><td>A</td><td>Single</td><td>—</td><td><span class="t avail-t">AVAILABLE</span></td></tr>
+              <tr data-s="maint"><td>103</td><td>A</td><td>Triple</td><td>—</td><td><span class="t maint-t">MAINT.</span></td></tr>
+              <tr data-s="occ"><td>201</td><td>B</td><td>Double</td><td>Ankit Verma</td><td><span class="t occ-t">OCCUPIED</span></td></tr>
+              <tr data-s="avail"><td>202</td><td>B</td><td>Single</td><td>—</td><td><span class="t avail-t">AVAILABLE</span></td></tr>
+              <tr data-s="avail"><td>203</td><td>C</td><td>Triple</td><td>—</td><td><span class="t avail-t">AVAILABLE</span></td></tr>
+              <tr data-s="occ"><td>301</td><td>C</td><td>Double</td><td>Priya Nair</td><td><span class="t occ-t">OCCUPIED</span></td></tr>
+              <tr data-s="maint"><td>304</td><td>C</td><td>Single</td><td>—</td><td><span class="t maint-t">MAINT.</span></td></tr>
+              <tr data-s="avail"><td>401</td><td>A</td><td>Single</td><td>—</td><td><span class="t avail-t">AVAILABLE</span></td></tr>
+              <tr data-s="occ"><td>402</td><td>B</td><td>Double</td><td>Sneha Patil</td><td><span class="t occ-t">OCCUPIED</span></td></tr>
             </tbody>
           </table>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- COMPLAINTS SECTION -->
-  <section class="complaint-section" id="complaints">
-    <div class="section-label">Maintenance</div>
-    <h2 class="section-title">Complaint Management</h2>
-    <div class="complaint-wrapper">
-      <!-- File Complaint -->
-      <div class="complaint-form-box">
-        <h3>🔧 File a New Complaint</h3>
-        <div class="form-group">
-          <label>Your Room No.</label>
-          <input type="text" placeholder="e.g. 204-A" id="cRoom"/>
-        </div>
-        <div class="form-group">
-          <label>Category</label>
-          <select id="cCategory">
-            <option>Plumbing</option>
-            <option>Electrical</option>
-            <option>Furniture</option>
-            <option>Cleanliness</option>
-            <option>Internet/WiFi</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Priority</label>
-          <div class="radio-group">
-            <label class="radio-opt plow"><input type="radio" name="priority" value="low" checked/> Low</label>
-            <label class="radio-opt pmed"><input type="radio" name="priority" value="medium"/> Medium</label>
-            <label class="radio-opt phigh"><input type="radio" name="priority" value="high"/> High</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Description</label>
-          <textarea placeholder="Describe the issue in detail..." id="cDesc" rows="4"></textarea>
-        </div>
-        <button class="btn-primary full-btn" onclick="fileComplaint()">Submit Complaint</button>
-        <div class="alloc-result" id="complaintResult"></div>
-      </div>
-
-      <!-- Complaint Tracker -->
-      <div class="complaint-tracker-box">
-        <h3>📋 Active Complaints</h3>
-        <div id="complaintList" class="complaint-list">
-          <div class="complaint-item">
-            <div class="ci-header">
-              <span class="ci-cat">⚡ Electrical</span>
-              <span class="ci-badge in-progress">In Progress</span>
-            </div>
-            <p class="ci-desc">Switchboard sparking in Room 301-B</p>
-            <div class="ci-meta">
-              <span>Room 301-B</span>
-              <span>Apr 14, 2025</span>
-              <span class="ci-priority high">High</span>
-            </div>
-            <div class="ci-timeline">
-              <div class="tl-step done">Filed</div>
-              <div class="tl-line done"></div>
-              <div class="tl-step done">Assigned</div>
-              <div class="tl-line active"></div>
-              <div class="tl-step active">In Progress</div>
-              <div class="tl-line"></div>
-              <div class="tl-step">Resolved</div>
-            </div>
-          </div>
-          <div class="complaint-item">
-            <div class="ci-header">
-              <span class="ci-cat">🚿 Plumbing</span>
-              <span class="ci-badge resolved">Resolved</span>
-            </div>
-            <p class="ci-desc">Water leakage under the washbasin in Room 204-A</p>
-            <div class="ci-meta">
-              <span>Room 204-A</span>
-              <span>Apr 10, 2025</span>
-              <span class="ci-priority low">Low</span>
-            </div>
-            <div class="ci-timeline">
-              <div class="tl-step done">Filed</div>
-              <div class="tl-line done"></div>
-              <div class="tl-step done">Assigned</div>
-              <div class="tl-line done"></div>
-              <div class="tl-step done">In Progress</div>
-              <div class="tl-line done"></div>
-              <div class="tl-step done">Resolved</div>
-            </div>
-          </div>
-          <div class="complaint-item">
-            <div class="ci-header">
-              <span class="ci-cat">📶 WiFi</span>
-              <span class="ci-badge pending">Pending</span>
-            </div>
-            <p class="ci-desc">No internet connectivity on Floor 3 since 2 days</p>
-            <div class="ci-meta">
-              <span>Room 305-C</span>
-              <span>Apr 16, 2025</span>
-              <span class="ci-priority medium">Medium</span>
-            </div>
-            <div class="ci-timeline">
-              <div class="tl-step done">Filed</div>
-              <div class="tl-line active"></div>
-              <div class="tl-step active">Assigned</div>
-              <div class="tl-line"></div>
-              <div class="tl-step">In Progress</div>
-              <div class="tl-line"></div>
-              <div class="tl-step">Resolved</div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- COMPLAINTS -->
+<section class="comp-section" id="complaints">
+  <div class="wrap">
+    <div class="sec-bar sec-bar-inv">
+      <span class="sec-label sec-label-inv">MAINTENANCE COMPLAINT DESK</span>
+      <div class="sec-rule sec-rule-inv"></div>
     </div>
-  </section>
+    <div class="two-col">
 
-  <!-- DASHBOARD SECTION -->
-  <section class="dashboard-section" id="dashboard">
-    <div class="section-label">Analytics</div>
-    <h2 class="section-title">Admin Dashboard</h2>
-    <div class="dash-grid">
-      <div class="dash-card kpi">
-        <div class="kpi-icon">🏠</div>
-        <div class="kpi-data">
-          <span class="kpi-num">320</span>
-          <span class="kpi-label">Total Rooms</span>
-        </div>
-      </div>
-      <div class="dash-card kpi">
-        <div class="kpi-icon">👥</div>
-        <div class="kpi-data">
-          <span class="kpi-num">278</span>
-          <span class="kpi-label">Occupied</span>
-        </div>
-      </div>
-      <div class="dash-card kpi">
-        <div class="kpi-icon">✅</div>
-        <div class="kpi-data">
-          <span class="kpi-num">42</span>
-          <span class="kpi-label">Available</span>
-        </div>
-      </div>
-      <div class="dash-card kpi">
-        <div class="kpi-icon">🔧</div>
-        <div class="kpi-data">
-          <span class="kpi-num">17</span>
-          <span class="kpi-label">Open Complaints</span>
-        </div>
-      </div>
-
-      <!-- Bar Chart -->
-      <div class="dash-card chart-card">
-        <h4>Complaints by Category</h4>
-        <div class="bar-chart">
-          <div class="bar-row"><span class="bar-label">Plumbing</span><div class="bar-track"><div class="bar-fill" style="width:72%">72%</div></div></div>
-          <div class="bar-row"><span class="bar-label">Electrical</span><div class="bar-track"><div class="bar-fill elec" style="width:55%">55%</div></div></div>
-          <div class="bar-row"><span class="bar-label">Furniture</span><div class="bar-track"><div class="bar-fill furn" style="width:38%">38%</div></div></div>
-          <div class="bar-row"><span class="bar-label">WiFi</span><div class="bar-track"><div class="bar-fill wifi" style="width:45%">45%</div></div></div>
-          <div class="bar-row"><span class="bar-label">Cleanliness</span><div class="bar-track"><div class="bar-fill clean" style="width:30%">30%</div></div></div>
-        </div>
-      </div>
-
-      <!-- Occupancy Donut -->
-      <div class="dash-card donut-card">
-        <h4>Room Occupancy</h4>
-        <div class="donut-wrap">
-          <svg viewBox="0 0 120 120" class="donut-svg">
-            <circle cx="60" cy="60" r="50" fill="none" stroke="#1a1a2e" stroke-width="18"/>
-            <circle cx="60" cy="60" r="50" fill="none" stroke="#e8ff47" stroke-width="18" stroke-dasharray="222 92" stroke-linecap="round" transform="rotate(-90 60 60)"/>
-            <circle cx="60" cy="60" r="50" fill="none" stroke="#ff6b6b" stroke-width="18" stroke-dasharray="28 286" stroke-linecap="round" stroke-dashoffset="-222" transform="rotate(-90 60 60)"/>
-            <text x="60" y="57" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">87%</text>
-            <text x="60" y="71" text-anchor="middle" fill="#888" font-size="8">Occupied</text>
-          </svg>
-          <div class="donut-legend">
-            <span><i class="dot" style="background:#e8ff47"></i> Occupied (278)</span>
-            <span><i class="dot" style="background:#4ade80"></i> Available (42)</span>
-            <span><i class="dot" style="background:#f87171"></i> Maintenance (0)</span>
+      <div class="panel panel-dark">
+        <div class="panel-hdr panel-hdr-inv">🔧 LODGE A COMPLAINT</div>
+        <div class="panel-bd">
+          <div class="row2">
+            <div class="fg">
+              <label class="fl fl-inv">ROOM NO.</label>
+              <input class="fi fi-inv" type="text" id="cRoom" placeholder="e.g. 204-A"/>
+            </div>
+            <div class="fg">
+              <label class="fl fl-inv">CATEGORY</label>
+              <select class="fi fi-inv" id="cCat">
+                <option>Plumbing</option><option>Electrical</option><option>Furniture</option>
+                <option>Cleanliness</option><option>Internet / WiFi</option><option>Other</option>
+              </select>
+            </div>
           </div>
+          <div class="fg">
+            <label class="fl fl-inv">PRIORITY LEVEL</label>
+            <div class="rr-group">
+              <label class="rc rc-inv low-rc"><input type="radio" name="prio" value="LOW" checked/><span>LOW</span></label>
+              <label class="rc rc-inv med-rc"><input type="radio" name="prio" value="MEDIUM"/><span>MEDIUM</span></label>
+              <label class="rc rc-inv hi-rc"><input type="radio" name="prio" value="HIGH"/><span>HIGH</span></label>
+            </div>
+          </div>
+          <div class="fg">
+            <label class="fl fl-inv">DESCRIPTION</label>
+            <textarea class="fi fi-inv" id="cDesc" rows="4" placeholder="Describe the issue clearly..."></textarea>
+          </div>
+          <button class="submit-btn submit-inv" onclick="fileComplaint()">LODGE COMPLAINT</button>
+          <div id="cMsg" class="res-msg res-inv"></div>
         </div>
       </div>
 
-      <!-- Recent Activity -->
-      <div class="dash-card activity-card">
-        <h4>Recent Activity</h4>
-        <ul class="activity-list">
-          <li><span class="act-icon">🛏️</span><div><strong>Room 204-A</strong> allocated to Sneha Patil<span class="act-time">2 hrs ago</span></div></li>
-          <li><span class="act-icon">🔧</span><div><strong>Complaint #47</strong> assigned to maintenance staff<span class="act-time">4 hrs ago</span></div></li>
-          <li><span class="act-icon">✅</span><div><strong>Complaint #39</strong> resolved — Plumbing fixed<span class="act-time">Yesterday</span></div></li>
-          <li><span class="act-icon">🔄</span><div><strong>Room 108-C</strong> moved to maintenance<span class="act-time">2 days ago</span></div></li>
-          <li><span class="act-icon">👤</span><div><strong>Rahul Mehta</strong> added to waitlist<span class="act-time">3 days ago</span></div></li>
+      <div class="comp-board">
+        <div class="board-hdr">ACTIVE COMPLAINT BOARD</div>
+        <div class="comp-list" id="cList">
+
+          <div class="cc">
+            <div class="cc-top">
+              <div>
+                <div class="cc-meta-row"><span class="cc-id">#047</span><span class="cc-cat">⚡ ELECTRICAL</span><span class="prio hi-prio">HIGH</span></div>
+                <p class="cc-desc">Switchboard sparking in Room 301-B. Fire hazard risk.</p>
+                <div class="cc-room">ROOM 301-B &nbsp;·&nbsp; APR 14, 2025</div>
+              </div>
+              <span class="cc-status in-prog-s">IN PROGRESS</span>
+            </div>
+            <div class="timeline">
+              <div class="ts done"><div class="td"></div><div class="tl-lbl">FILED</div></div>
+              <div class="tl-line tl-done"></div>
+              <div class="ts done"><div class="td"></div><div class="tl-lbl">ASSIGNED</div></div>
+              <div class="tl-line tl-active"></div>
+              <div class="ts active"><div class="td"></div><div class="tl-lbl">IN PROGRESS</div></div>
+              <div class="tl-line"></div>
+              <div class="ts"><div class="td td-empty"></div><div class="tl-lbl">RESOLVED</div></div>
+            </div>
+          </div>
+
+          <div class="cc cc-resolved">
+            <div class="cc-top">
+              <div>
+                <div class="cc-meta-row"><span class="cc-id">#039</span><span class="cc-cat">🚿 PLUMBING</span><span class="prio lo-prio">LOW</span></div>
+                <p class="cc-desc">Water leakage under washbasin — Room 204-A.</p>
+                <div class="cc-room">ROOM 204-A &nbsp;·&nbsp; APR 10, 2025</div>
+              </div>
+              <span class="cc-status resolved-s">RESOLVED</span>
+            </div>
+            <div class="timeline">
+              <div class="ts done"><div class="td"></div><div class="tl-lbl">FILED</div></div>
+              <div class="tl-line tl-done"></div>
+              <div class="ts done"><div class="td"></div><div class="tl-lbl">ASSIGNED</div></div>
+              <div class="tl-line tl-done"></div>
+              <div class="ts done"><div class="td"></div><div class="tl-lbl">IN PROGRESS</div></div>
+              <div class="tl-line tl-done"></div>
+              <div class="ts done"><div class="td"></div><div class="tl-lbl">RESOLVED</div></div>
+            </div>
+          </div>
+
+          <div class="cc">
+            <div class="cc-top">
+              <div>
+                <div class="cc-meta-row"><span class="cc-id">#051</span><span class="cc-cat">📶 WIFI</span><span class="prio med-prio">MEDIUM</span></div>
+                <p class="cc-desc">No internet connectivity on Floor 3 since 2 days.</p>
+                <div class="cc-room">ROOM 305-C &nbsp;·&nbsp; APR 16, 2025</div>
+              </div>
+              <span class="cc-status pending-s">PENDING</span>
+            </div>
+            <div class="timeline">
+              <div class="ts done"><div class="td"></div><div class="tl-lbl">FILED</div></div>
+              <div class="tl-line tl-active"></div>
+              <div class="ts active"><div class="td"></div><div class="tl-lbl">ASSIGNED</div></div>
+              <div class="tl-line"></div>
+              <div class="ts"><div class="td td-empty"></div><div class="tl-lbl">IN PROGRESS</div></div>
+              <div class="tl-line"></div>
+              <div class="ts"><div class="td td-empty"></div><div class="tl-lbl">RESOLVED</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="dash-section" id="dashboard">
+  <div class="wrap">
+    <div class="sec-bar">
+      <span class="sec-label">ADMIN DASHBOARD</span>
+      <div class="sec-rule"></div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-n">320</div><div class="kpi-l">TOTAL ROOMS</div><div class="kpi-s">3 blocks</div></div>
+      <div class="kpi kpi-dark"><div class="kpi-n">278</div><div class="kpi-l">OCCUPIED</div><div class="kpi-s">87% capacity</div></div>
+      <div class="kpi kpi-accent"><div class="kpi-n">42</div><div class="kpi-l">AVAILABLE</div><div class="kpi-s">Sem 2 open</div></div>
+      <div class="kpi kpi-red"><div class="kpi-n">17</div><div class="kpi-l">OPEN TICKETS</div><div class="kpi-s">3 high priority</div></div>
+      <div class="kpi"><div class="kpi-n">98%</div><div class="kpi-l">RESOLVE RATE</div><div class="kpi-s">Last 30 days</div></div>
+    </div>
+
+    <div class="dash-row">
+
+      <div class="dcard dcard-wide">
+        <div class="dcard-hdr">COMPLAINTS BY CATEGORY</div>
+        <div class="bars">
+          <div class="bar-r"><span class="bar-lbl">PLUMBING</span><div class="bar-track"><div class="bar-f bf1" style="width:72%">72%</div></div></div>
+          <div class="bar-r"><span class="bar-lbl">ELECTRICAL</span><div class="bar-track"><div class="bar-f bf2" style="width:55%">55%</div></div></div>
+          <div class="bar-r"><span class="bar-lbl">WIFI</span><div class="bar-track"><div class="bar-f bf3" style="width:45%">45%</div></div></div>
+          <div class="bar-r"><span class="bar-lbl">FURNITURE</span><div class="bar-track"><div class="bar-f bf4" style="width:38%">38%</div></div></div>
+          <div class="bar-r"><span class="bar-lbl">CLEANLINESS</span><div class="bar-track"><div class="bar-f bf5" style="width:30%">30%</div></div></div>
+        </div>
+      </div>
+
+      <div class="dcard dcard-mid">
+        <div class="dcard-hdr">OCCUPANCY</div>
+        <svg viewBox="0 0 140 140" class="donut">
+          <circle cx="70" cy="70" r="52" fill="none" stroke="#e8e0d0" stroke-width="20"/>
+          <circle cx="70" cy="70" r="52" fill="none" stroke="#2b2309" stroke-width="20"
+            stroke-dasharray="225 101" stroke-linecap="butt" transform="rotate(-90 70 70)"/>
+          <circle cx="70" cy="70" r="52" fill="none" stroke="#c0392b" stroke-width="20"
+            stroke-dasharray="28 298" stroke-linecap="butt" stroke-dashoffset="-225" transform="rotate(-90 70 70)"/>
+          <text x="70" y="64" text-anchor="middle" fill="#2b2309" font-size="20" font-weight="900" font-family="Playfair Display, serif">87%</text>
+          <text x="70" y="80" text-anchor="middle" fill="#888" font-size="8" font-family="Barlow Condensed, sans-serif" letter-spacing="1">OCCUPIED</text>
+        </svg>
+        <div class="donut-leg">
+          <div class="dl"><div class="dlb" style="background:#2b2309"></div>Occupied — 278</div>
+          <div class="dl"><div class="dlb" style="background:#e8e0d0; border:1px solid #ccc"></div>Available — 42</div>
+          <div class="dl"><div class="dlb" style="background:#c0392b"></div>Maint. — 0</div>
+        </div>
+      </div>
+
+      <div class="dcard dcard-narrow">
+        <div class="dcard-hdr">ACTIVITY LOG</div>
+        <ul class="act-log">
+          <li><span class="adot g-dot"></span><div><b>Room 204-A</b> allocated to Sneha Patil<span class="at">2h ago</span></div></li>
+          <li><span class="adot y-dot"></span><div><b>Complaint #47</b> assigned to staff<span class="at">4h ago</span></div></li>
+          <li><span class="adot g-dot"></span><div><b>Complaint #39</b> resolved<span class="at">Yesterday</span></div></li>
+          <li><span class="adot r-dot"></span><div><b>Room 108-C</b> → Maintenance<span class="at">2d ago</span></div></li>
+          <li><span class="adot y-dot"></span><div><b>Rahul Mehta</b> on waitlist<span class="at">3d ago</span></div></li>
         </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- ROLES -->
-  <section class="roles-section">
-    <div class="section-label">Stakeholders</div>
-    <h2 class="section-title">System Roles</h2>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES -->
+<section class="roles" id="about2">
+  <div class="wrap">
+    <div class="sec-bar">
+      <span class="sec-label">SYSTEM STAKEHOLDERS</span>
+      <div class="sec-rule"></div>
+    </div>
     <div class="roles-grid">
       <div class="role-card">
-        <div class="role-icon">👤</div>
-        <h3>Student</h3>
-        <ul>
-          <li>Apply for room</li>
-          <li>View allocated room</li>
-          <li>File complaints</li>
-          <li>Track complaint status</li>
-        </ul>
+        <div class="rc-num">I</div>
+        <div class="rc-ico">👤</div>
+        <h3 class="rc-title">STUDENT</h3>
+        <div class="rc-rule"></div>
+        <ul class="rc-list"><li>Apply for room</li><li>View allocation</li><li>File complaints</li><li>Track status</li></ul>
+      </div>
+      <div class="role-card role-accent">
+        <div class="rc-num">II</div>
+        <div class="rc-ico">🏛️</div>
+        <h3 class="rc-title">WARDEN</h3>
+        <div class="rc-rule"></div>
+        <ul class="rc-list"><li>Approve allocations</li><li>Manage complaints</li><li>View all rooms</li><li>Post notices</li></ul>
       </div>
       <div class="role-card">
-        <div class="role-icon">🏛️</div>
-        <h3>Warden</h3>
-        <ul>
-          <li>Approve allocations</li>
-          <li>View all rooms</li>
-          <li>Manage complaints</li>
-          <li>Post announcements</li>
-        </ul>
+        <div class="rc-num">III</div>
+        <div class="rc-ico">🔩</div>
+        <h3 class="rc-title">MAINTENANCE</h3>
+        <div class="rc-rule"></div>
+        <ul class="rc-list"><li>View assignments</li><li>Update status</li><li>Mark maintenance</li><li>Log work done</li></ul>
       </div>
-      <div class="role-card">
-        <div class="role-icon">🔩</div>
-        <h3>Maintenance Staff</h3>
-        <ul>
-          <li>View assigned complaints</li>
-          <li>Update repair status</li>
-          <li>Mark rooms in maintenance</li>
-          <li>Log work done</li>
-        </ul>
-      </div>
-      <div class="role-card">
-        <div class="role-icon">🖥️</div>
-        <h3>Administrator</h3>
-        <ul>
-          <li>Full system access</li>
-          <li>Manage users & roles</li>
-          <li>View analytics</li>
-          <li>System configuration</li>
-        </ul>
+      <div class="role-card role-dark">
+        <div class="rc-num">IV</div>
+        <div class="rc-ico">🖥️</div>
+        <h3 class="rc-title">ADMIN</h3>
+        <div class="rc-rule"></div>
+        <ul class="rc-list"><li>Full system access</li><li>Manage users</li><li>View analytics</li><li>Configuration</li></ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="brand-icon">⬡</span>
-        <span>HostelHub</span>
-      </div>
-      <p>A Software Project Management submission for Hostel Room Allocation & Complaint Tracking System.</p>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-logo">HOSTELHUB</div>
+      <p class="footer-sub">Room Allocation &amp; Complaint Management System</p>
+      <p class="footer-copy">© 2025 — Software Project Management Project Submission</p>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 HostelHub — SPM Project</span>
-      <div class="tech-tags">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>MySQL</span><span>PHP</span>
-      </div>
+    <div>
+      <div class="footer-head">TECH STACK</div>
+      <div class="footer-tech">HTML5 · CSS3 · JavaScript · PHP · MySQL · Apache</div>
     </div>
-  </footer>
+    <div>
+      <div class="footer-head">SDLC MODEL</div>
+      <div class="footer-badge">AGILE / SCRUM</div>
+      <div class="footer-head" style="margin-top:10px">SPRINT</div>
+      <div class="footer-badge">2-WEEK CYCLES</div>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <span>HOSTELHUB © 2025</span>
+    <span>SOFTWARE PROJECT MANAGEMENT</span>
+    <span>PUNE, INDIA</span>
+  </div>
+</footer>
 
-  <script>
-    // Sticky Navbar
-    window.addEventListener('scroll', () => {
-      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 40);
-    });
+<script>
+function allocRoom() {
+  const id = document.getElementById('sId').value.trim();
+  const name = document.getElementById('sName').value.trim();
+  if (!id || !name) { msg('allocMsg','⚠ FILL IN STUDENT ID AND NAME','warn'); return; }
+  const rtype = document.querySelector('input[name="rtype"]:checked').value;
+  const block = document.getElementById('sBlock').value.split(' ')[1];
+  const nums = ['102','203','210','305','401'];
+  const r = nums[Math.floor(Math.random()*nums.length)];
+  msg('allocMsg',`✔ ROOM ${r}-${block} (${rtype}) ALLOCATED TO ${name.toUpperCase()} · ID: ${id.toUpperCase()}`,'ok');
+}
 
-    // Mobile menu
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('open');
-    }
+function fileComplaint() {
+  const room = document.getElementById('cRoom').value.trim();
+  const desc = document.getElementById('cDesc').value.trim();
+  const cat = document.getElementById('cCat').value;
+  const prio = document.querySelector('input[name="prio"]:checked').value;
+  if (!room || !desc) { msg('cMsg','⚠ FILL IN ROOM NO. AND DESCRIPTION','warn'); return; }
+  const id = Math.floor(Math.random()*900)+100;
+  msg('cMsg',`✔ COMPLAINT #${id} LODGED · ${cat.toUpperCase()} · ${prio} PRIORITY · WARDEN NOTIFIED`,'ok');
+  const card = document.createElement('div');
+  card.className = 'cc new-cc';
+  card.innerHTML = `<div class="cc-top"><div>
+    <div class="cc-meta-row"><span class="cc-id">#${id}</span><span class="cc-cat">📝 ${cat.toUpperCase()}</span><span class="prio ${prio.toLowerCase()==='high'?'hi':prio.toLowerCase()==='medium'?'med':'lo'}-prio">${prio}</span></div>
+    <p class="cc-desc">${desc}</p>
+    <div class="cc-room">ROOM ${room.toUpperCase()} · JUST NOW</div>
+  </div><span class="cc-status pending-s">PENDING</span></div>
+  <div class="timeline">
+    <div class="ts done"><div class="td"></div><div class="tl-lbl">FILED</div></div>
+    <div class="tl-line"></div><div class="ts"><div class="td td-empty"></div><div class="tl-lbl">ASSIGNED</div></div>
+    <div class="tl-line"></div><div class="ts"><div class="td td-empty"></div><div class="tl-lbl">IN PROGRESS</div></div>
+    <div class="tl-line"></div><div class="ts"><div class="td td-empty"></div><div class="tl-lbl">RESOLVED</div></div>
+  </div>`;
+  document.getElementById('cList').prepend(card);
+}
 
-    // Smooth active link
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', function () {
-        document.querySelectorAll('.nav-links a').forEach(x => x.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
+function msg(id, txt, type) {
+  const el = document.getElementById(id);
+  el.textContent = txt;
+  el.className = 'res-msg ' + type;
+}
 
-    // Room Allocation
-    function allocateRoom() {
-      const id = document.getElementById('studentId').value.trim();
-      const name = document.getElementById('studentName').value.trim();
-      if (!id || !name) {
-        showResult('allocResult', '⚠️ Please fill in Student ID and Name.', 'warn');
-        return;
-      }
-      const rooms = ['102-A', '203-B', '210-C', '305-A', '401-B'];
-      const room = rooms[Math.floor(Math.random() * rooms.length)];
-      showResult('allocResult', `✅ Room <strong>${room}</strong> allocated to <strong>${name}</strong> (${id}) successfully!`, 'success');
-    }
+function fRoom(s, btn) {
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#rtb tr').forEach(r => {
+    r.style.display = (s==='all' || r.dataset.s===s) ? '' : 'none';
+  });
+}
 
-    // File Complaint
-    function fileComplaint() {
-      const room = document.getElementById('cRoom').value.trim();
-      const desc = document.getElementById('cDesc').value.trim();
-      const cat = document.getElementById('cCategory').value;
-      const prio = document.querySelector('input[name="priority"]:checked').value;
-      if (!room || !desc) {
-        showResult('complaintResult', '⚠️ Please fill in Room No. and Description.', 'warn');
-        return;
-      }
-      const id = Math.floor(Math.random() * 900) + 100;
-      showResult('complaintResult', `✅ Complaint <strong>#${id}</strong> filed for Room <strong>${room}</strong> — <em>${cat}</em> [<b>${prio}</b>]. Warden notified.`, 'success');
-      prependComplaint(id, room, cat, desc, prio);
-    }
-
-    function prependComplaint(id, room, cat, desc, prio) {
-      const list = document.getElementById('complaintList');
-      const div = document.createElement('div');
-      div.className = 'complaint-item new-item';
-      div.innerHTML = `
-        <div class="ci-header">
-          <span class="ci-cat">📝 ${cat}</span>
-          <span class="ci-badge pending">Pending</span>
-        </div>
-        <p class="ci-desc">${desc}</p>
-        <div class="ci-meta">
-          <span>Room ${room}</span>
-          <span>Just now</span>
-          <span class="ci-priority ${prio}">${prio}</span>
-        </div>
-        <div class="ci-timeline">
-          <div class="tl-step done">Filed</div>
-          <div class="tl-line"></div>
-          <div class="tl-step">Assigned</div>
-          <div class="tl-line"></div>
-          <div class="tl-step">In Progress</div>
-          <div class="tl-line"></div>
-          <div class="tl-step">Resolved</div>
-        </div>`;
-      list.prepend(div);
-    }
-
-    function showResult(id, msg, type) {
-      const el = document.getElementById(id);
-      el.innerHTML = msg;
-      el.className = 'alloc-result ' + type;
-    }
-
-    // Room Filter Tabs
-    function filterRooms(status, btn) {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-      document.querySelectorAll('#roomTableBody tr').forEach(row => {
-        row.style.display = (status === 'all' || row.dataset.status === status) ? '' : 'none';
-      });
-    }
-
-    function showSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.feat-card, .dash-card, .role-card, .complaint-item').forEach(el => observer.observe(el));
-  </script>
+window.addEventListener('scroll', () => {
+  let cur = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+  });
+  document.querySelectorAll('.nlink').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+</script>
 </body>
 </html>
